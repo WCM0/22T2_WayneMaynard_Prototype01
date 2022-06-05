@@ -13,6 +13,11 @@ public class MoveInputEvent : UnityEvent<float, float> { }
 
 public class InputController : MonoBehaviour
 {
+
+
+   
+
+
     Controls controls;
     public MoveInputEvent moveInputEvent;
 
@@ -26,6 +31,8 @@ public class InputController : MonoBehaviour
         controls.Gameplay.Enable();
         controls.Gameplay.Move.performed += OnMovePerformed;
         controls.Gameplay.Move.canceled += OnMovePerformed;
+
+      
     }
 
     private void OnMovePerformed(InputAction.CallbackContext context)
@@ -34,4 +41,9 @@ public class InputController : MonoBehaviour
         moveInputEvent.Invoke(moveInput.x, moveInput.y);
         Debug.Log($"Move Input: (moveInput)");
     }
+
+
+  
+
+
 }

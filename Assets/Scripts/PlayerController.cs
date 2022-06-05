@@ -6,24 +6,34 @@ public class PlayerController : MonoBehaviour
 {
 
     public float moveSpeed = 5.0f;
-    public float rotationSpeed = 200.0f; 
-
-
+    public float rotationSpeed = 200.0f;
 
     float horizontal;
     float vertical;
 
 
 
+
+
+
+
+
+
+
+
+ 
+
     private void Update()
     {
         Vector3 moveDirection = Vector3.forward * vertical + Vector3.right * horizontal;
 
-       
+        
 
         Vector3 projectedCameraForward = Vector3.ProjectOnPlane(Camera.main.transform.forward, Vector3.up);
 
         Quaternion rotationToCamera = Quaternion.LookRotation(projectedCameraForward, Vector3.up);
+
+
 
 
         moveDirection = rotationToCamera * moveDirection;
@@ -37,6 +47,10 @@ public class PlayerController : MonoBehaviour
 
         transform.position += moveDirection * moveSpeed * Time.deltaTime;
 
+       
+
+
+
 
     }
 
@@ -47,4 +61,7 @@ public class PlayerController : MonoBehaviour
         this.horizontal = horizontal;
         Debug.Log($"Player Controller: Move Input: {vertical}, {horizontal}");
     }
+
+    
+
 }
