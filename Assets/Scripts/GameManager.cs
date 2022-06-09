@@ -21,5 +21,15 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         textMeshPro.text = "" + berriesCollected;
+
+        if (berriesCollected == 10 && MainCountdown.secondsLeft >= 0)
+        {
+            Debug.Log("Take the berries to the Wizard");
+        }
+
+        if (MainCountdown.secondsLeft == 0)
+        {
+            Debug.Log("Time's Up!");
+        }
     }
 }
