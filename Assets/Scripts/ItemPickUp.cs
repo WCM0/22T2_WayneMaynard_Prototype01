@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class ItemPickUp : MonoBehaviour
 {
+
+
+
+    public AudioSource collectSound;
+
     // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnTriggerEnter(Collider other)
     {
-        
+        collectSound.Play();
+        GameManager.berriesCollected ++;
+        //MainCountdown.secondsLeft += 2;
+
+        Destroy(gameObject);
     }
 }
