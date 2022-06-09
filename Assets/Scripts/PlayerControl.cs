@@ -12,7 +12,12 @@ public class PlayerControl : MonoBehaviour
     private InputActionReference movementControl;
     [SerializeField]
     private InputActionReference jumpControl;
-    
+    [SerializeField]
+    private InputActionReference runControl;
+    [SerializeField]
+    private InputActionReference runStopControl;
+
+
     [SerializeField]
     private float playerSpeed = 8.0f;
     [SerializeField]
@@ -21,6 +26,7 @@ public class PlayerControl : MonoBehaviour
     private float gravityValue = -9.81f;
     [SerializeField]
     private float rotationSpeed = 4.0f;
+    
 
 
 
@@ -28,19 +34,29 @@ public class PlayerControl : MonoBehaviour
     private Vector3 playerVelocity;
     private bool groundedPlayer;
 
+    public bool isRunning;
+
     private Transform cameraMainTransform;
 
     private void OnEnable()
     {
         movementControl.action.Enable();
         jumpControl.action.Enable();
+        runControl.action.Enable();
+        runStopControl.action.Enable();
+
     }
 
     private void OnDisable()
     {
         movementControl.action.Disable();
         jumpControl.action.Disable();
+        runControl.action.Disable();
+        runStopControl.action.Disable();
+
     }
+
+   
 
 
     private void Start()
@@ -68,6 +84,8 @@ public class PlayerControl : MonoBehaviour
 
         controller.Move(move * Time.deltaTime * playerSpeed);
 
+        
+
 
 
         // Changes the height position of the player..
@@ -87,5 +105,29 @@ public class PlayerControl : MonoBehaviour
             transform.rotation = Quaternion.Lerp(transform.rotation, rotation, Time.deltaTime * rotationSpeed);   
         }
 
+        if (runControl.action.triggered)
+        {
+            playerSpeed = 24.0f;
+        }
+
+        if (runStopControl.action.triggered)
+        {
+            playerSpeed = 8.0f;
+        }
+
     }
+
+    private void RunPressed()
+    {
+        isRunning = true;
+        Debug.Log("Running");
+    }
+
+    private void RunReleased()
+    {
+        isRunning = false;
+        Debug.Log("Stopped running");
+    }
+
+
 }

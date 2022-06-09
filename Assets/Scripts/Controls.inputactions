@@ -40,6 +40,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "RunStop",
+                    "type": "Button",
+                    "id": "133ca4d0-f795-4851-8637-485c2a247825",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -157,7 +166,7 @@
                     "name": "",
                     "id": "0b2d0532-90a3-4a1c-b761-2d16caddb746",
                     "path": "<Gamepad>/buttonEast",
-                    "interactions": "",
+                    "interactions": "Press",
                     "processors": "",
                     "groups": "",
                     "action": "Run",
@@ -168,10 +177,32 @@
                     "name": "",
                     "id": "e094cf82-a921-4e2f-9036-f542fe269721",
                     "path": "<Keyboard>/rightShift",
-                    "interactions": "",
+                    "interactions": "Press",
                     "processors": "",
                     "groups": "",
                     "action": "Run",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bfc77be0-0007-492a-9a0a-faf014248876",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "Press(behavior=1)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RunStop",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b9659af3-71e5-499f-b0f2-fcb3f0247b21",
+                    "path": "<Keyboard>/rightShift",
+                    "interactions": "Press(behavior=1)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RunStop",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
