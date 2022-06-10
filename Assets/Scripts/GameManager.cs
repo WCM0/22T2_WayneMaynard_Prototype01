@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject castleGate;
 
-    public GameObject WinText;
+   
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
         goToWizardText.SetActive(false);
         castleGate.SetActive(false);
         collectObjectiveText.SetActive(true);
-        WinText.SetActive(true);
+        
     }
 
     // Update is called once per frame
