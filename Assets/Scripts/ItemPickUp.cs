@@ -24,8 +24,8 @@ public class ItemPickUp : MonoBehaviour
     {
         collectSound.Play();
         
-        GameManager.berriesCollected ++;
-        MainCountdown.secondsLeft += 2;
+        //GameManager.berriesCollected ++;
+        //MainCountdown.secondsLeft += 2;
 
 
         Destroy(gameObject);
