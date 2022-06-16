@@ -1,4 +1,4 @@
-/*using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,24 +9,26 @@ public class GameManager : MonoBehaviour
 {
     public TMPro.TMP_Text textMeshPro;
 
-    //public static int berriesCollected;
+    public static int berriesCollected;
 
-//public GameObject goToWizardText;
+    public static int gemsCollected;
 
-//public GameObject collectObjectiveText;
+    public static int coinsCollected;
 
-//public GameObject castleGate;
+    //public GameObject goToWizardText;
+
+    //public GameObject collectObjectiveText;
+
+    //public GameObject castleGate;
 
 
 
-// Start is called before the first frame update
-void Start()
+    // Start is called before the first frame update
+    void Start()
 {
 
     textMeshPro.text = "" + berriesCollected;
-    goToWizardText.SetActive(false);
-    castleGate.SetActive(false);
-    collectObjectiveText.SetActive(true);
+    
 
 }
 
@@ -35,12 +37,9 @@ void Update()
 {
     textMeshPro.text = "" + berriesCollected;
 
-    if (berriesCollected == 10 && MainCountdown.secondsLeft >= 0)
+    if (berriesCollected == 8 && gemsCollected == 3 && coinsCollected == 5)
     {
-        //Debug.Log("Take the berries to the Wizard");
-        collectObjectiveText.SetActive(false);
-        goToWizardText.SetActive(true);
-        castleGate.SetActive(true);
+            Debug.Log("You have all the items take them to the castle");
     }
 
     if (MainCountdown.secondsLeft == 0)
@@ -50,4 +49,4 @@ void Update()
 
     }
 }
-}*/
+}

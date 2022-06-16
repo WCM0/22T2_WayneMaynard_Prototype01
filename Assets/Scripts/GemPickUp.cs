@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemPickUp : MonoBehaviour
+public class GemPickUp : MonoBehaviour
 {
 
     int _rotationSpeed = 15;
@@ -12,7 +12,7 @@ public class ItemPickUp : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     private void Update()
@@ -23,8 +23,8 @@ public class ItemPickUp : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         collectSound.Play();
-        
-        GameManager.berriesCollected ++;
+
+        GameManager.gemsCollected++;
         //MainCountdown.secondsLeft += 2;
 
 
