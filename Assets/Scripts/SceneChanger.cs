@@ -11,6 +11,12 @@ public class SceneChanger : MonoBehaviour
         SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
     }
 
+    public void LoadViewControls()
+    {
+        SceneManager.LoadScene("ViewControls", LoadSceneMode.Single);
+    }
+
+
     public void ReloadGame()
     {
         Scene scene = SceneManager.GetActiveScene(); SceneManager.LoadScene(scene.name);
