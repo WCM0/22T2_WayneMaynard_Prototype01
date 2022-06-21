@@ -31,6 +31,7 @@ public class PlatformDetector : MonoBehaviour
         if (other.gameObject == Player)
         {
             Player.transform.parent = null;
+            Player.transform.position = Player.transform.position;
         }
     }
 
