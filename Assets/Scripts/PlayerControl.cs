@@ -31,6 +31,10 @@ public class PlayerControl : MonoBehaviour
 
 
     private CharacterController controller;
+
+    public GameObject imp;
+    public Animator animator;
+
     private Vector3 playerVelocity;
     private bool groundedPlayer;
 
@@ -73,6 +77,7 @@ public class PlayerControl : MonoBehaviour
         if (groundedPlayer && playerVelocity.y < 0)
         {
             playerVelocity.y = 0f;
+            animator.SetInteger("condition", 0);
         }
 
         Vector2 movement = movementControl.action.ReadValue<Vector2>();
@@ -91,7 +96,10 @@ public class PlayerControl : MonoBehaviour
         // Changes the height position of the player..
         if (jumpControl.action.triggered && groundedPlayer)
         {
+
+            animator.SetInteger("condition", 3);
             playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue);
+            
         }
 
         playerVelocity.y += gravityValue * Time.deltaTime;
@@ -100,19 +108,27 @@ public class PlayerControl : MonoBehaviour
 
         if(movement != Vector2.zero)
         {
+            animator.SetInteger("condition", 1);
             float targetAngle = Mathf.Atan2(movement.x, movement.y) * Mathf.Rad2Deg + cameraMainTransform.eulerAngles.y;
             Quaternion rotation = Quaternion.Euler(0f, targetAngle, 0f);
-            transform.rotation = Quaternion.Lerp(transform.rotation, rotation, Time.deltaTime * rotationSpeed);   
+            transform.rotation = Quaternion.Lerp(transform.rotation, rotation, Time.deltaTime * rotationSpeed);
+            
         }
+        
 
         if (runControl.action.triggered)
         {
+            animator.SetInteger("condition", 2);
             playerSpeed = 12.0f;
+
+            
         }
 
         if (runStopControl.action.triggered)
         {
+            
             playerSpeed = 4.0f;
+            
         }
 
     }
@@ -121,6 +137,7 @@ public class PlayerControl : MonoBehaviour
     {
         isRunning = true;
         Debug.Log("Running");
+        
     }
 
     private void RunReleased()
