@@ -39,9 +39,9 @@ public class GameManager : MonoBehaviour
 // Update is called once per frame
     void Update()
     {
-        berryText.text = berriesCollected.ToString() + "/08";
-        coinText.text = coinsCollected.ToString() + "/05";
-        gemText.text = gemsCollected.ToString() + "/03";
+        berryText.text = berriesCollected.ToString() + "/8";
+        coinText.text = coinsCollected.ToString() + "/5";
+        gemText.text = gemsCollected.ToString() + "/3";
 
         if (berriesCollected == 8 && gemsCollected == 3 && coinsCollected == 5)
         {
