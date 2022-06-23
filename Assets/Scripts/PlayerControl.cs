@@ -19,7 +19,7 @@ public class PlayerControl : MonoBehaviour
 
 
     [SerializeField]
-    private float playerSpeed = 8.0f;
+    private float playerSpeed = 4.0f;
     [SerializeField]
     private float jumpHeight = 1.0f;
     [SerializeField]
@@ -107,12 +107,12 @@ public class PlayerControl : MonoBehaviour
 
         if (runControl.action.triggered)
         {
-            playerSpeed = 24.0f;
+            playerSpeed = 12.0f;
         }
 
         if (runStopControl.action.triggered)
         {
-            playerSpeed = 8.0f;
+            playerSpeed = 4.0f;
         }
 
     }
