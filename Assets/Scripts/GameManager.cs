@@ -10,12 +10,15 @@ public class GameManager : MonoBehaviour
     public TMPro.TMP_Text berryText;
     public TMPro.TMP_Text gemText;
     public TMPro.TMP_Text coinText;
+    public TMPro.TMP_Text keyText;
 
     public static int berriesCollected;
 
     public static int gemsCollected;
 
     public static int coinsCollected;
+
+    public static int keyCollected;
 
     //public GameObject goToWizardText;
 
@@ -32,6 +35,7 @@ public class GameManager : MonoBehaviour
         berryText.text = "" + berriesCollected;
         coinText.text = "" + coinsCollected;
         gemText.text = "" + gemsCollected;
+        keyText.text = "" + keyCollected;
     
 
     }
@@ -42,6 +46,7 @@ public class GameManager : MonoBehaviour
         berryText.text = berriesCollected.ToString() + "/8";
         coinText.text = coinsCollected.ToString() + "/5";
         gemText.text = gemsCollected.ToString() + "/3";
+        keyText.text = keyCollected.ToString() + "/1";
 
         if (berriesCollected == 8 && gemsCollected == 3 && coinsCollected == 5)
         {

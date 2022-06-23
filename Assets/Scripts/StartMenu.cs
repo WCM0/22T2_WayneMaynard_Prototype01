@@ -11,6 +11,7 @@ public class StartMenu : MonoBehaviour
     public GameObject berryDisplayer;
     public GameObject coinDisplayer;
     public GameObject gemDisplayer;
+    public GameObject keyDisplayer;
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +36,7 @@ public class StartMenu : MonoBehaviour
         berryDisplayer.SetActive(true);
         coinDisplayer.SetActive(true);
         gemDisplayer.SetActive(true);
+        keyDisplayer.SetActive(true);
         gameStart = true;
     }
 

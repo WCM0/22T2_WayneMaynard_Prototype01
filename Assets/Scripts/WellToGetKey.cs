@@ -9,13 +9,14 @@ public class WellToGetKey : MonoBehaviour
     public GameObject depositPanel;
     public GameObject player;
     public GameObject keyDungeon;
+    public AudioSource completedTask;
 
 
     // Start is called before the first frame update
     void Start()
     {
         depositPanel.SetActive(false);
-        keyDungeon.SetActive(false);
+        //keyDungeon.SetActive(false);
     }
 
     // Update is called once per frame
@@ -44,6 +45,7 @@ public class WellToGetKey : MonoBehaviour
                 {
                     Debug.Log("You have all the requirements for the key");
                     keyDungeon.SetActive(true);
+                    completedTask.Play();
                 } else
                 {
                     Debug.Log("You don't have enough materials");
