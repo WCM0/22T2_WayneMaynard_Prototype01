@@ -12,6 +12,7 @@ public class StartMenu : MonoBehaviour
     public GameObject coinDisplayer;
     public GameObject gemDisplayer;
     public GameObject keyDisplayer;
+    public GameObject controlPanel;
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +33,7 @@ public class StartMenu : MonoBehaviour
     {
         Time.timeScale = 1f;
         startPanel.SetActive(false);
+        controlPanel.SetActive(false);
         healthPanel.SetActive(true);
         berryDisplayer.SetActive(true);
         coinDisplayer.SetActive(true);
