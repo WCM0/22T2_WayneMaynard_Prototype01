@@ -9,6 +9,7 @@ public class WellToGetKey : MonoBehaviour
     public GameObject depositPanel;
     public GameObject player;
     public GameObject keyDungeon;
+    public GameObject collectiblePanel;
     public AudioSource completedTask;
 
 
@@ -49,6 +50,7 @@ public class WellToGetKey : MonoBehaviour
                 } else
                 {
                     Debug.Log("You don't have enough materials");
+                    collectiblePanel.SetActive(true);
                 }
             }
         }
@@ -59,6 +61,7 @@ public class WellToGetKey : MonoBehaviour
         if(other.gameObject == player)
         {
             depositPanel.SetActive(false);
+            collectiblePanel.SetActive(false);
         }
     }
 
