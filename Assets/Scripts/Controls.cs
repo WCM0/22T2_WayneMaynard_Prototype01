@@ -198,7 +198,7 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""e094cf82-a921-4e2f-9036-f542fe269721"",
-                    ""path"": ""<Keyboard>/rightShift"",
+                    ""path"": ""<Keyboard>/alt"",
                     ""interactions"": ""Press"",
                     ""processors"": """",
                     ""groups"": """",
