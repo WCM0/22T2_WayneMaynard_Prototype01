@@ -30,17 +30,17 @@ public class PlayerControl : MonoBehaviour
 
 
 
-    private CharacterController controller;
+    //private CharacterController controller;
 
     public GameObject imp;
-    public Animator animator;
+   
 
     private Vector3 playerVelocity;
     private bool groundedPlayer;
 
-    public bool isRunning;
+    public CharacterController controller;
 
-    private Transform cameraMainTransform;
+    public Transform cameraMainTransform;
 
     private void OnEnable()
     {
@@ -67,7 +67,7 @@ public class PlayerControl : MonoBehaviour
     {
         controller = gameObject.GetComponent<CharacterController>();
 
-        cameraMainTransform = Camera.main.transform;
+       // cameraMainTransform = Camera.main.transform;
 
     }
 
@@ -77,7 +77,7 @@ public class PlayerControl : MonoBehaviour
         if (groundedPlayer && playerVelocity.y < 0)
         {
             playerVelocity.y = 0f;
-            animator.SetInteger("condition", 0);
+            
         }
 
         Vector2 movement = movementControl.action.ReadValue<Vector2>();
@@ -97,7 +97,7 @@ public class PlayerControl : MonoBehaviour
         if (jumpControl.action.triggered && groundedPlayer)
         {
 
-            animator.SetInteger("condition", 3);
+            
             playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue);
             
         }
@@ -108,7 +108,7 @@ public class PlayerControl : MonoBehaviour
 
         if(movement != Vector2.zero)
         {
-            animator.SetInteger("condition", 1);
+           
             float targetAngle = Mathf.Atan2(movement.x, movement.y) * Mathf.Rad2Deg + cameraMainTransform.eulerAngles.y;
             Quaternion rotation = Quaternion.Euler(0f, targetAngle, 0f);
             transform.rotation = Quaternion.Lerp(transform.rotation, rotation, Time.deltaTime * rotationSpeed);
@@ -118,7 +118,7 @@ public class PlayerControl : MonoBehaviour
 
         if (runControl.action.triggered)
         {
-            animator.SetInteger("condition", 2);
+            
             playerSpeed = 12.0f;
 
             
@@ -133,18 +133,5 @@ public class PlayerControl : MonoBehaviour
 
     }
 
-    private void RunPressed()
-    {
-        isRunning = true;
-        Debug.Log("Running");
-        
-    }
-
-    private void RunReleased()
-    {
-        isRunning = false;
-        Debug.Log("Stopped running");
-    }
-
-
+   
 }
