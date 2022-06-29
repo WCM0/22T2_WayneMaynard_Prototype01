@@ -34,7 +34,7 @@ public class PlayerControl : MonoBehaviour
 
     public GameObject imp;
    
-
+    private Animator animator;
     private Vector3 playerVelocity;
     private bool groundedPlayer;
 
@@ -69,6 +69,8 @@ public class PlayerControl : MonoBehaviour
 
        // cameraMainTransform = Camera.main.transform;
 
+        animator = gameObject.GetComponent<Animator>();
+
     }
 
     void Update()
@@ -97,9 +99,14 @@ public class PlayerControl : MonoBehaviour
         if (jumpControl.action.triggered && groundedPlayer)
         {
 
-            
+            animator.SetBool("Jump", true);
+            animator.SetBool("Idle", false);
             playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue);
             
+        }
+        else
+        {
+            animator.SetBool("Jump", false);
         }
 
         playerVelocity.y += gravityValue * Time.deltaTime;
@@ -108,25 +115,38 @@ public class PlayerControl : MonoBehaviour
 
         if(movement != Vector2.zero)
         {
-           
+
+            animator.SetBool("Walking", true);
+            animator.SetBool("Idle", false);
             float targetAngle = Mathf.Atan2(movement.x, movement.y) * Mathf.Rad2Deg + cameraMainTransform.eulerAngles.y;
             Quaternion rotation = Quaternion.Euler(0f, targetAngle, 0f);
             transform.rotation = Quaternion.Lerp(transform.rotation, rotation, Time.deltaTime * rotationSpeed);
+
             
+        }
+        else
+        {
+            animator.SetBool("Walking", false);
+            animator.SetBool("Idle", true);
         }
         
 
-        if (runControl.action.triggered)
+        if (runControl.action.triggered && groundedPlayer && movement != Vector2.zero)
         {
-            
+
+            animator.SetBool("Run", true);
+            animator.SetBool("Idle", false);
             playerSpeed = 12.0f;
 
             
         }
 
         if (runStopControl.action.triggered)
+
         {
-            
+
+            animator.SetBool("Run", false);
+            animator.SetBool("Walking", true);
             playerSpeed = 4.0f;
             
         }
