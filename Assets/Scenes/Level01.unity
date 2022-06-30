@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 203844588}
-  m_IndirectSpecularColor: {r: 0.28275514, g: 0.36896572, b: 0.500981, a: 1}
+  m_IndirectSpecularColor: {r: 0.28275502, g: 0.36896566, b: 0.50097847, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -219,6 +219,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8038953061284475896, guid: 82c045ced159d284abafc8834088c26d,
     type: 3}
   m_PrefabInstance: {fileID: 5104514}
+  m_PrefabAsset: {fileID: 0}
+--- !u!20 &8822760 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 2860723030246403975, guid: 866c1037bf4806048889eb96c7a62e7c,
+    type: 3}
+  m_PrefabInstance: {fileID: 2063309533}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &17404347
 PrefabInstance:
@@ -93563,22 +93569,22 @@ PrefabInstance:
     - target: {fileID: 2860723030216524679, guid: 866c1037bf4806048889eb96c7a62e7c,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000017175495
+      value: -0.000000017175495
       objectReference: {fileID: 0}
     - target: {fileID: 2860723030216524679, guid: 866c1037bf4806048889eb96c7a62e7c,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000000010304856
+      value: 0.0000000010304856
       objectReference: {fileID: 0}
     - target: {fileID: 2860723030246403974, guid: 866c1037bf4806048889eb96c7a62e7c,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 2.939225e-15
+      value: -2.939225e-15
       objectReference: {fileID: 0}
     - target: {fileID: 2860723030246403974, guid: 866c1037bf4806048889eb96c7a62e7c,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -3.3013045e-14
+      value: 3.3013045e-14
       objectReference: {fileID: 0}
     - target: {fileID: 3130632454870249216, guid: 866c1037bf4806048889eb96c7a62e7c,
         type: 3}
@@ -114718,7 +114724,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Camera
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8822760}
     - target: {fileID: 9178478375426100781, guid: ab33e9668d32a5a42984022306392bcf,
         type: 3}
       propertyPath: m_Pivot.x
