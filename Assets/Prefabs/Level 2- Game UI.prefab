@@ -1308,15 +1308,18 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Imp: "The wizard told me to gather enough berries, coins and gems to get
-    the key for the dungeon. I better get going and explore the valley. My chance
-    of becoming human again is closer with every second."
+  m_text: 'Imp: "The wizard never makes things easy. I better avoid all the traps
+    and get to the other side, or I will be in serious trouble. Wait, are those the
+    potions made with the materials I collected?"
 
 
+    Cross the linear path ''till
+    the end of the dungeon. Avoid contact with all the traps, you will lose one life
+    if they touch you. after losing all your lives you will have to repeat the level.
 
-    Search for the collectables
-    around the map and deposit them in the well close the castle to get the key for
-    the dungeon.'
+
+    Collect
+    the potions to regain lives.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e9b43240f7219fd4aaab029029b83e55, type: 2}
   m_sharedMaterial: {fileID: -7686084906907140348, guid: e9b43240f7219fd4aaab029029b83e55,

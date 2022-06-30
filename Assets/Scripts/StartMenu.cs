@@ -7,7 +7,6 @@ public class StartMenu : MonoBehaviour
     public bool gameStart = false;
 
     public GameObject startPanel;
-    public GameObject healthPanel;
     public GameObject berryDisplayer;
     public GameObject coinDisplayer;
     public GameObject gemDisplayer;
@@ -34,7 +33,6 @@ public class StartMenu : MonoBehaviour
         Time.timeScale = 1f;
         startPanel.SetActive(false);
         controlPanel.SetActive(false);
-        healthPanel.SetActive(true);
         berryDisplayer.SetActive(true);
         coinDisplayer.SetActive(true);
         gemDisplayer.SetActive(true);
