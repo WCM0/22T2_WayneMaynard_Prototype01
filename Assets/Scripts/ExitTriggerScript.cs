@@ -19,7 +19,7 @@ public class ExitTriggerScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
+        SceneManager.LoadScene("EndScene", LoadSceneMode.Single);
     }
 
 
